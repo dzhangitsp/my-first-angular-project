@@ -1,0 +1,22 @@
+<div style="margin: 10px">
+  <div class="card">
+    <div classs="card-block k-form">
+      <fieldset>
+        <legend>Bidning types</legend>
+          <div class="k-form-field">
+            <span>Bind the data to:</span>
+              <input [(ngModel)]="bindingType" type="radio" name="mode" id="array" value="array" class="k-radio" (change)="changeBindingType($event)">
+              <label class="k-radio-label" for="array">Array object</label>
+              <input [(ngModel)]="bindingType" type="radio" name="mode" id="gridDataResult" value="gridDataResult" class="k-radio" (change)="changeBindingType($event)">
+              <label class="k-radio-label" for="gridDataResult">GridDtaResult</label>
+              <input [(ngModel)]="bindingType" type="radio" name="mode" id="async" value="async" class="k-radio" (change)="changeBindingType($event)">
+              <label class="k-radio-label" for="async">Asynchronous source</label>
+          </div>
+      </fieldset>
+    </div>
+  </div>
+</div>
+<kendo-grid [kendoGridBinding]="gridData" [height]="410" [loading]="orderView.loading" [resizable]="true" [filterable]="true" [groupable]="true" [group]="groupBy" [sortable]="{allowUnsort: true, mode: 'multiple'}" [pageable]="{buttonCount: 3, pageSizes: [5, 10, 20]}" [pageSize]="8">
+  <kendo-grid-column *ngFor="let col of columns" [field]="col.field">
+  </kendo-grid-column>
+</kendo-grid>
