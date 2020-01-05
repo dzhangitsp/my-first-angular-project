@@ -3,8 +3,6 @@ import { BehaviorSubject } from 'rxjs';
 import { GridDataResult } from '@progress/kendo-angular-grid';
 import { HttpClient } from '@angular/common/http';
 import { map, tap } from 'rxjs/operators';
-import { JsonPipe } from '@angular/common';
-import { Size } from '@progress/kendo-drawing/dist/npm/geometry';
 
 @Injectable({
   providedIn: 'root'
